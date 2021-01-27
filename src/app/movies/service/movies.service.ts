@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { IMovie } from './movies.interfaces';
 import { Movie } from '../class/movie.class';
 
 @Injectable({
@@ -17,7 +16,7 @@ export class MoviesService {
       this.apiUrl = environment?.apiUrl;
    }
 
-   public getMovies(): Observable<IMovie[]> {
+   public getMovies(): Observable<Movie[]> {
       return this.httpClient.get(
         `${this.apiUrl}/discover/movie`,
         {

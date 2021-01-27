@@ -8,5 +8,6 @@
         <p><strong>Release date:</strong> {{movie?.release_date | date:'MMMM d, y'}}</p>
         <app-star-rating [rating]="movie?.vote_average"></app-star-rating>
         <p class="overview">{{movie?.overview}}</p>
+        <button (click)="onToggleFavourite()">Add Favourite</button>
     </div>
 </div>

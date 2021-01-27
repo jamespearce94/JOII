@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MoviesService } from '../movies/service/movies.service';
-import { map, mergeMap } from "rxjs/operators";
+import { map, mergeMap, take } from "rxjs/operators";
 import { Movie } from '../movies/class/movie.class';
+import { FavouritesService } from '../movies/service/favourites.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -17,6 +18,7 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(
     private readonly movieService: MoviesService,
+    private readonly favouritesService: FavouritesService,
     private readonly route: ActivatedRoute
     ) { }
 
@@ -29,8 +31,20 @@ export class MovieDetailComponent implements OnInit {
           return this.movieService.getMovie(this.movieId);
         })
       ).subscribe((movie: Movie) => {
-          this.movie = movie;
+        this.movie = movie;
       });
   };
 
+  public onToggleFavourite() {
+    if (this.movie?.favourite) {
+      return this.favouritesService.getFavourites().pipe(
+        take(1),
+        mergeMap((favs) => {
+          return this.favouritesService.removeFavourite(1);
+        })
+      ).subscribe()
+    } else {
+      this.favouritesService.addFavourite(this.movie?.id);
+    }
+  }
 }
