@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles/colours.scss";
+@import "./styles/fonts.scss";
+
+
+body, html {
+    padding: 0;
+    margin: 0;
+    background-color: $bg-colour;
+    color: $primary-text-colour;
+    height: 100%;
+    @include paragraph;
+}
+

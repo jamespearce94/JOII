@@ -1,3 +1,12 @@
-<ng-container *ngIf="movies?.length > 0">
-    <p *ngFor="let movie of movies">{{movie?.title}}</p>
-</ng-container>
+<div class="filters-container">
+    <div class="fav-filter">
+        <input class="checkbox" type="checkbox" name="favourite" [(ngModel)]="showFavourites"> <p>Show only favourites</p>
+        <p *ngIf="showFavourites">Is Favs</p>
+    </div>
+</div>
+<div class="movies-container">
+    <ng-container *ngIf="movies?.length > 0">
+        <app-movie-list-item *ngFor="let movie of movies" [movie]="movie"></app-movie-list-item>
+    </ng-container>
+</div>
+

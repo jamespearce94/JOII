@@ -1,0 +1,23 @@
+@import "../../styles/layout.scss";
+@import "../../styles/colours.scss";
+
+.filters-container {
+    background: $secondary-bg-colour;
+    margin: $sp-md $sp-lg $sp-sm $sp-lg;
+    display: flex;
+    align-items: center;
+    border-radius: $sp-xs;
+    padding: 0 $sp-sm;
+}
+
+.fav-filter {
+    display: flex;
+    align-items: center;
+    p {
+        padding: 0 $sp-sm;
+    }
+}
+
+.movies-container {
+    padding: 0 $sp-lg $sp-md $sp-lg;
+}

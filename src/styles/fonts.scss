@@ -1,0 +1,16 @@
+
+
+@mixin paragraph($font-size: 14px, $line-height: 16px) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: 400;
+}
+
+
+@mixin header($font-size: 22px, $line-height: 28px) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: bold;
+}

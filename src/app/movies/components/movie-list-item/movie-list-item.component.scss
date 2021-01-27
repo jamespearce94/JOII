@@ -1,0 +1,33 @@
+@import "../../../../styles/layout.scss";
+@import "../../../../styles/colours.scss";
+
+$poster-height: 50px;
+
+.item-container {
+    margin: $sp-sm 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    border: 1px solid $primary-border;
+    border-radius: $sp-xs;
+    background: $secondary-bg-colour;
+    &:hover {
+        cursor: pointer;
+        border-color: $highlight;
+    }
+    .movie-img {
+        height: $poster-height;
+        border-radius: $sp-xs;
+        img {
+            height: $poster-height;
+            background-size: contain;
+            border-radius: $sp-xs;
+        }
+    }
+    .movie-favourite {
+        margin-left: auto;
+    }
+    p {
+        padding-left: $sp-md;
+    }
+}

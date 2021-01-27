@@ -1,0 +1,19 @@
+@import "../../../styles/colours.scss";
+@import "../../../styles/layout.scss";
+@import "../../../styles/fonts.scss";
+
+
+
+
+header {
+    background: $secondary-bg-colour;
+    color: $White;
+    padding: $sp-lg;
+    vertical-align: middle;
+    @include header;
+    &:hover {
+        cursor: pointer;
+        color: rgba($White, 0.7);
+        text-decoration: underline;
+    }
+}

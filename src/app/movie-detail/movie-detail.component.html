@@ -1,1 +1,12 @@
-<p>movie-detail works!</p>
+<div class="details-container" *ngIf="movie">
+    <img class="poster-img" src="{{movie?.poster_path}}">
+    <div class="details-content-container">
+        <div class="details-header-container">
+            <h1>{{movie?.title}}</h1>
+            <p>{{movie?.vote_average}}/10</p>
+        </div>
+        <p><strong>Release date:</strong> {{movie?.release_date | date:'MMMM d, y'}}</p>
+        <app-star-rating [rating]="movie?.vote_average"></app-star-rating>
+        <p class="overview">{{movie?.overview}}</p>
+    </div>
+</div>

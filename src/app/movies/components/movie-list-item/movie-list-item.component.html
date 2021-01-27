@@ -1,0 +1,9 @@
+<div class="item-container" *ngIf="movie" (click)="onViewDetail(movie?.id)">
+    <div class="movie-img">
+        <img src="{{movie?.poster_path}}">
+    </div>
+    <p>{{movie?.title}}</p>
+    <div class="movie-favourite">
+
+    </div>
+</div>

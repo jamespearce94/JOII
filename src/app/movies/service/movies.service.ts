@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { MoviesModule } from '../movies.module';
-import { IMovie, IMovieResult } from './movies.interfaces';
+import { IMovie } from './movies.interfaces';
+import { Movie } from '../class/movie.class';
 
 @Injectable({
   providedIn: 'root'
@@ -18,26 +18,19 @@ export class MoviesService {
    }
 
    public getMovies(): Observable<IMovie[]> {
-      return this.httpClient.get(this.apiUrl).pipe(
+      return this.httpClient.get(
+        `${this.apiUrl}/discover/movie`,
+        {
+          params: {
+            api_key: environment.apiKey,
+            sort_by: 'popularity.desc'
+          }
+        }
+        ).pipe(
         map((result: any) => {
           if (result && result?.results?.length > 0) {
             result.results = result.results.map((movie: any) => {
-                return {
-                  adult: movie?.adult,
-                  backdrop_path: movie?.backdrop_path,
-                  genre_ids: movie?.genre_ids,
-                  id: movie?.id,
-                  original_language: movie?.original_language,
-                  original_title: movie?.original_title,
-                  overview: movie?.overview,
-                  popularity: movie?.popularity,
-                  poster_path: movie?.poster_path,
-                  release_date: new Date(movie?.release_date),
-                  title: movie?.title,
-                  video: movie?.video,
-                  vote_average: movie?.vote_average,
-                  vote_count: movie?.vote_count
-                } as IMovie;
+                return new Movie(movie);
             });
           }
           return result?.results;
@@ -45,5 +38,18 @@ export class MoviesService {
       )
    }
 
-
+   public getMovie(id: number): Observable<Movie> {
+    return this.httpClient.get(
+      `${this.apiUrl}/movie/${id}`,
+      {
+        params: {
+          api_key: environment.apiKey,
+        }
+      }
+      ).pipe(
+        map((result: any) => {
+          return new Movie(result);
+        }
+      ));
+   }
 }

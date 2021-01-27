@@ -1,0 +1,21 @@
+@import '../../../styles/colours.scss';
+
+$star-size: 30px;
+$star-colour: $White;
+$star-background: #fc0;
+
+.stars {
+    --percent: calc(var(--rating) / 10 * 100%);
+    display: inline-block;
+    font-size: $star-size;
+    font-family: Times;
+    line-height: 1;
+    &::before {
+        content: '★★★★★';
+        letter-spacing: 3px;
+        background: linear-gradient(90deg, $star-background var(--percent), $star-colour var(--percent));
+        background-clip: padding-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+}

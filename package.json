@@ -19,8 +19,10 @@
     "@angular/platform-browser": "~10.2.4",
     "@angular/platform-browser-dynamic": "~10.2.4",
     "@angular/router": "~10.2.4",
+    "@types/underscore": "^1.10.24",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "underscore": "^1.12.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
