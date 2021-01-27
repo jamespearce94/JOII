@@ -5,6 +5,7 @@ $poster-height: 50px;
 
 .item-container {
     margin: $sp-sm 0;
+    padding-right: $sp-md;
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-start;
@@ -26,6 +27,7 @@ $poster-height: 50px;
     }
     .movie-favourite {
         margin-left: auto;
+        align-self: center;
     }
     p {
         padding-left: $sp-md;

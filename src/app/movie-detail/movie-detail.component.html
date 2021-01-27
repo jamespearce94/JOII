@@ -8,6 +8,6 @@
         <p><strong>Release date:</strong> {{movie?.release_date | date:'MMMM d, y'}}</p>
         <app-star-rating [rating]="movie?.vote_average"></app-star-rating>
         <p class="overview">{{movie?.overview}}</p>
-        <button (click)="onToggleFavourite()">Add Favourite</button>
     </div>
+    <sh-favourite-toggle class="favourites-toggle" [selected]="movie?.favourite" [movieId]="movie?.id" [size]="50"></sh-favourite-toggle>
 </div>

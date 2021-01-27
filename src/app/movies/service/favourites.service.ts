@@ -2,6 +2,11 @@ import { Injectable } from "@angular/core";
 import { NgxIndexedDBService } from "ngx-indexed-db";
 import { Observable } from "rxjs";
 
+export interface IFavourite {
+    id: number;
+    movie_id: number;
+}
+
 @Injectable({
     providedIn: 'root'
   })
@@ -10,17 +15,17 @@ import { Observable } from "rxjs";
 
       }
 
-      public getFavourites(): Observable<any[]> {
+      public getFavourites(): Observable<IFavourite[]> {
         return this.dbService.getAll("favourites");
       }
 
-      public addFavourite(movie_id: number) {
+      public addFavourite(movie_id: number): Observable<number> {
         return this.dbService.add('favourites',{
             movie_id: movie_id
         });
       }
 
-      public removeFavourite(favourite_id: number) {
+      public removeFavourite(favourite_id: number): Observable<IFavourite[]> {
         return this.dbService.delete('favourites', favourite_id);
       }
 

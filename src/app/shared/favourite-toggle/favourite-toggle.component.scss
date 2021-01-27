@@ -1,0 +1,30 @@
+
+@import "../../../styles/colours.scss";
+.heart {
+    align-self: center;
+    fill: $secondary-bg-colour;
+    stroke: red;
+    position: relative;
+    width: 20px;
+    top: 2px;
+    animation: unset;
+    &.selected {
+        fill: red;
+    }
+    &:hover {
+        cursor: pointer;
+        animation: pulse 1s ease infinite;
+    }
+    &.read-only {
+        &:hover {
+            cursor: pointer;
+            animation: unset;
+        }
+    }
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+  }
