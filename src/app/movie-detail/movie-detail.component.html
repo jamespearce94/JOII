@@ -9,5 +9,6 @@
         <app-star-rating [rating]="movie?.vote_average"></app-star-rating>
         <p class="overview">{{movie?.overview}}</p>
     </div>
-    <sh-favourite-toggle class="favourites-toggle" [selected]="movie?.favourite" [movieId]="movie?.id" [size]="50"></sh-favourite-toggle>
+    <sh-favourite-toggle class="favourites-toggle" [selected]="movie?.favourite" [movieId]="movie?.id" [size]="50"
+        (onChange)="onFavouriteChange($event)"></sh-favourite-toggle>
 </div>

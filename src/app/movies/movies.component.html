@@ -1,6 +1,8 @@
 <div class="filters-container">
     <div class="fav-filter">
-        <input class="checkbox" type="checkbox" name="favourite" [(ngModel)]="showFavourites" (ngModelChange)="onToggleFilter()"> <p>Show only favourites</p>
+        <input class="checkbox" type="checkbox" name="favourite" [(ngModel)]="showFavourites"
+            (ngModelChange)="onToggleFilter()">
+        <p>Show only favourites</p>
     </div>
 </div>
 <div class="movies-container">
@@ -8,4 +10,3 @@
         <app-movie-list-item *ngFor="let movie of filteredMovies" [movie]="movie"></app-movie-list-item>
     </ng-container>
 </div>
-

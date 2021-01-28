@@ -1,15 +1,17 @@
 
 @import "../../../styles/colours.scss";
+@import "../../../styles/colour-pallet.scss";
+
 .heart {
     align-self: center;
     fill: $secondary-bg-colour;
-    stroke: red;
+    stroke: $Red;
     position: relative;
     width: 20px;
     top: 2px;
     animation: unset;
     &.selected {
-        fill: red;
+        fill: $Red;
     }
     &:hover {
         cursor: pointer;

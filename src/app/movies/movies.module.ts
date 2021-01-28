@@ -7,25 +7,22 @@ import { MovieListItemComponent } from './components/movie-list-item/movie-list-
 import { MoviesComponent } from './movies.component';
 
 const routes: Routes = [
-    {
-        path: '',
-        component: MoviesComponent,
-        pathMatch: 'full'
-    }
-]
+  {
+    path: '',
+    component: MoviesComponent,
+    pathMatch: 'full',
+  },
+];
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        RouterModule.forChild(routes),
-        FavouriteToggleModule
-    ],
-    exports: [MoviesComponent],
-    declarations: [
-        MoviesComponent,
-        MovieListItemComponent
-    ],
-    providers: [],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule.forChild(routes),
+    FavouriteToggleModule,
+  ],
+  exports: [MoviesComponent],
+  declarations: [MoviesComponent, MovieListItemComponent],
+  providers: [],
 })
-export class MoviesModule { }
+export class MoviesModule {}

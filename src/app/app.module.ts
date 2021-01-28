@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
 import { HeaderModule } from './shared/header/header.module';
 
+// Indexed-db setup
 const dbConfig: DBConfig  = {
   name: 'preferencesDb',
   version: 1,
@@ -24,7 +25,7 @@ const dbConfig: DBConfig  = {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxIndexedDBModule.forRoot(dbConfig),
+    NgxIndexedDBModule.forRoot(dbConfig), // connects or creates new db store
     HttpClientModule,
     HeaderModule
   ],

@@ -4,6 +4,7 @@
     </div>
     <p>{{movie?.title}}</p>
     <div class="movie-favourite" *ngIf="movie?.favourite">
-        <sh-favourite-toggle [selected]="movie?.favourite" [movieId]="movie?.id" [readonly]="true"></sh-favourite-toggle>
+        <sh-favourite-toggle [selected]="movie?.favourite" [movieId]="movie?.id" [readonly]="true">
+        </sh-favourite-toggle>
     </div>
 </div>
